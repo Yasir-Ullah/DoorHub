@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoorHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black flex justify-center items-center min-h-screen">
+    <div class="w-full bg-white overflow-hidden">
+      <!-- Navbar -->
+      <nav class="flex justify-between items-center px-8 py-4">
+        <h1 class="text-2xl font-bold text-green-700">DoorHub</h1>
+
+        <ul
+          class="hidden md:flex gap-8 bg-green-700 text-white px-8 py-2 rounded-xl"
+        >
+          <li><a href="#" class="text-orange-400">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+
+        <button class="bg-orange-400 text-white px-5 py-2 rounded-lg">
+          Contact Us
+        </button>
+      </nav>
+
+      <!-- Hero -->
+      <section class="grid md:grid-cols-2 bg-green-800 text-white min-h-screen">
+        <!-- Left -->
+        <div class="p-10 md:p-16">
+          <h1 class="text-5xl font-bold leading-tight">
+            We Provide
+            <span class="text-orange-500 block"> Delivery </span>
+            Within 30 Min.
+          </h1>
+
+          <p class="mt-6 text-gray-200">
+            Imagine you don't need a diet because we provide healthy and
+            delicious food for you.
+          </p>
+
+          <!-- Search -->
+          <div class="mt-8 flex bg-white rounded-full overflow-hidden max-w-md">
+            <input
+              type="text"
+              placeholder="Enter Zip Code"
+              class="flex-1 px-4 py-3 text-black outline-none"
+            />
+
+            <button class="bg-orange-500 px-6 text-white font-semibold">
+              Discover →
+            </button>
+          </div>
+
+          <!-- Reviews -->
+          <div class="mt-8 flex items-center gap-3">
+            <div class="flex -space-x-3">
+              <img
+                src="https://i.pravatar.cc/40?img=1"
+                class="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <img
+                src="https://i.pravatar.cc/40?img=2"
+                class="w-10 h-10 rounded-full border-2 border-white"
+              />
+              <img
+                src="https://i.pravatar.cc/40?img=3"
+                class="w-10 h-10 rounded-full border-2 border-white"
+              />
+            </div>
+
+            <p>
+              <span class="text-orange-400 font-bold">300+</span>
+              Positive Reviews
+            </p>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <!-- Right Side -->
+        <div class="relative flex justify-center items-center">
+          <!-- Location Pin -->
+          <div
+            class="absolute top-10 left-20 w-40 h-40 bg-orange-600 rounded-full opacity-30 blur-xl"
+          ></div>
+
+          <!-- Delivery Boy Image -->
+          <img
+            src="./devl.boy.png"
+            alt="Delivery Boy"
+            class="relative z-10 w-[500px] max-w-full object-contain"
+          />
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
