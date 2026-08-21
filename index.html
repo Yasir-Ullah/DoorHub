@@ -3,46 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>DoorHub</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Hide scrollbar */
+      #slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      #slider {
+        scrollbar-width: none;
+      }
+    </style>
   </head>
+
   <body class="bg-black flex justify-center items-center min-h-screen">
     <div class="w-full bg-white overflow-hidden">
-      <!-- Navbar -->
-      <nav class="flex justify-between items-center px-8 py-4">
-        <h1 class="text-2xl font-bold text-green-700">DoorHub</h1>
+      <!-- ================= NAVBAR ================= -->
+
+      <nav
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-4 bg-white"
+      >
+        <h1 class="text-2xl font-bold text-orange-500">DoorHub</h1>
 
         <ul
           class="hidden md:flex gap-8 bg-green-700 text-white px-8 py-2 rounded-xl"
         >
-          <li><a href="#" class="text-orange-400">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
+          <li>
+            <a href="#" class="text-orange-400">Home</a>
+          </li>
+
+          <li>
+            <a href="#" class="hover:text-orange-400 transition duration-300"
+              >About</a
+            >
+          </li>
+
+          <li>
+            <a href="#" class="hover:text-orange-400 transition duration-300"
+              >Features</a
+            >
+          </li>
+
+          <li>
+            <a href="#" class="hover:text-orange-400 transition duration-300"
+              >Contact</a
+            >
+          </li>
+
+          <li>
+            <a href="#" class="hover:text-orange-400 transition duration-300"
+              >Blog</a
+            >
+          </li>
         </ul>
 
-        <button class="bg-orange-400 text-white px-5 py-2 rounded-lg">
+        <button
+          class="bg-orange-400 hover:bg-orange-500 text-white px-5 py-2 rounded-lg"
+        >
           Contact Us
         </button>
       </nav>
 
-      <!-- Hero -->
-      <section class="grid md:grid-cols-2 bg-green-800 text-white min-h-screen">
-        <!-- Left -->
-        <div class="p-10 md:p-16">
-          <h1 class="text-5xl font-bold leading-tight">
+      <!-- ================= HERO ================= -->
+
+      <section class="grid md:grid-cols-2 bg-green-800 text-white">
+        <!-- LEFT SIDE -->
+
+        <div class="p-10 md:p-16 flex flex-col justify-center">
+          <h1 class="text-4xl font-bold leading-tight pt-4">
             We Provide
+
             <span class="text-orange-500 block"> Delivery </span>
+
             Within 30 Min.
           </h1>
 
-          <p class="mt-6 text-gray-200">
+          <p class="mt-6 text-gray-200 max-w-lg">
             Imagine you don't need a diet because we provide healthy and
             delicious food for you.
           </p>
 
-          <!-- Search -->
+          <!-- SEARCH -->
+
           <div class="mt-8 flex bg-white rounded-full overflow-hidden max-w-md">
             <input
               type="text"
@@ -50,44 +96,55 @@
               class="flex-1 px-4 py-3 text-black outline-none"
             />
 
-            <button class="bg-orange-500 px-6 text-white font-semibold">
+            <button
+              class="bg-orange-500 hover:bg-orange-600 px-6 text-white font-semibold"
+            >
               Discover →
             </button>
           </div>
 
-          <!-- Reviews -->
+          <!-- REVIEWS -->
+
           <div class="mt-8 flex items-center gap-3">
             <div class="flex -space-x-3">
               <img
                 src="https://i.pravatar.cc/40?img=1"
+                alt="Customer"
                 class="w-10 h-10 rounded-full border-2 border-white"
               />
+
               <img
                 src="https://i.pravatar.cc/40?img=2"
+                alt="Customer"
                 class="w-10 h-10 rounded-full border-2 border-white"
               />
+
               <img
                 src="https://i.pravatar.cc/40?img=3"
+                alt="Customer"
                 class="w-10 h-10 rounded-full border-2 border-white"
               />
             </div>
 
             <p>
-              <span class="text-orange-400 font-bold">300+</span>
+              <span class="text-orange-400 font-bold"> 300+ </span>
+
               Positive Reviews
             </p>
           </div>
         </div>
 
-        <!-- Right -->
+        <!-- RIGHT SIDE -->
 
         <div class="relative flex justify-center items-center">
-          <!-- Location Pin -->
+          <!-- Orange Glow -->
+
           <div
             class="absolute top-10 left-20 w-40 h-40 bg-orange-600 rounded-full opacity-30 blur-xl"
           ></div>
 
-          <!-- Delivery Boy Image -->
+          <!-- Delivery Boy -->
+
           <img
             src="./images/delivery.boy.png"
             alt="Delivery Boy"
@@ -95,115 +152,414 @@
           />
         </div>
       </section>
+
+      <!-- ================= FOOD SECTION ================= -->
+
       <section class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 text-center">
           <h2 class="text-4xl font-bold text-orange-600">
             More Than 20 Dishes
           </h2>
+
           <h2 class="text-4xl font-bold text-orange-600 mb-4">To Order!</h2>
 
           <p class="text-gray-600 mb-12">
             Welcome to the biggest network of food ordering & delivery
           </p>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Item 1 -->
-            <div>
-              <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
-              >
-                <img
-                  src="images/frence.png"
-                  alt="French Fries"
-                  class="w-40 h-40 object-contain"
-                />
+          <!-- SLIDER CONTAINER -->
+
+          <div class="relative">
+            <!-- LEFT BUTTON -->
+
+            <button
+              onclick="scrollLeft()"
+              class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-600 text-white w-12 h-12 rounded-full text-2xl shadow-lg"
+            >
+              ←
+            </button>
+
+            <!-- FOOD SLIDER -->
+
+            <div
+              id="slider"
+              class="flex gap-8 overflow-x-auto scroll-smooth px-14 py-4"
+            >
+              <!-- FOOD 1 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/frence.png"
+                    alt="French Fries"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">FRENCH FRIES</h3>
               </div>
-              <h3 class="mt-4 font-bold text-lg">FRENCH FRIES</h3>
+
+              <!-- FOOD 2 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/Donut.png"
+                    alt="Donut"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">DONUT</h3>
+              </div>
+
+              <!-- FOOD 3 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/shorma.png"
+                    alt="Shorma"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">SHORMA</h3>
+              </div>
+
+              <!-- FOOD 4 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/taco.png"
+                    alt="Taco"
+                    class="w-32 h-32 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">TACO</h3>
+              </div>
+
+              <!-- FOOD 5 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/burger.png"
+                    alt="Burger"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">BURGER</h3>
+              </div>
+
+              <!-- FOOD 6 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/pizza.png"
+                    alt="Pizza"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">PIZZA</h3>
+              </div>
+
+              <!-- FOOD 7 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/chicken.png"
+                    alt="Chicken"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">CHICKEN</h3>
+              </div>
+
+              <!-- FOOD 8 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/sandwich.png"
+                    alt="Sandwich"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">SANDWICH</h3>
+              </div>
+
+              <!-- FOOD 9 -->
+
+              <div class="min-w-[200px]">
+                <div
+                  class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="images/Caka.png"
+                    alt="Hamburger"
+                    class="w-40 h-40 object-contain"
+                  />
+                </div>
+
+                <h3 class="mt-4 font-bold text-lg">CAKE</h3>
+              </div>
             </div>
 
-            <!-- Item 2 -->
-            <div>
+            <!-- RIGHT BUTTON -->
+
+            <button
+              onclick="scrollRight()"
+              class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-600 text-white w-12 h-12 rounded-full text-2xl shadow-lg"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- nnnnnnnnnnnnnnnn -->
+      <section class="bg-white py-16 px-5">
+        <div class="mx-auto max-w-6xl">
+          <!-- Heading -->
+          <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold text-orange-600">
+              How To Order
+            </h2>
+            <p class="mt-3 text-sm text-gray-600">Follow the steps</p>
+          </div>
+
+          <!-- Steps -->
+          <div class="relative grid grid-cols-1 md:grid-cols-4 gap-14 md:gap-5">
+            <!-- STEP 1 -->
+            <div class="relative flex flex-col items-center text-center">
               <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                class="absolute -top-7 flex h-8 w-8 items-center justify-center rounded-full border border-dashed border-gray-300 text-sm font-medium text-gray-700 bg-white"
               >
-                <img
-                  src="images/Donut.png"
-                  alt="Donut"
-                  class="w-40 h-40 object-contain"
-                />
+                1
               </div>
-              <h3 class="mt-4 font-bold text-lg">DONUT</h3>
+
+              <!-- Location Icon -->
+              <div class="mt-8 text-orange-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  class="h-16 w-16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="5"
+                >
+                  <circle
+                    cx="50"
+                    cy="27"
+                    r="12"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                  <path d="M50 40v25" />
+                  <path d="M18 69c0 10 64 10 64 0" />
+                  <path d="M18 69c2-7 12-10 24-12" />
+                  <path d="M82 69c-2-7-12-10-24-12" />
+                </svg>
+              </div>
+
+              <h3 class="mt-4 text-sm font-semibold text-gray-900">
+                Choose Your<br />Location
+              </h3>
+
+              <!-- Curved arrow -->
+              <svg
+                class="hidden md:block absolute top-24 left-[65%] w-40 h-20 text-green-300"
+                viewBox="0 0 160 80"
+                fill="none"
+              >
+                <path
+                  d="M5 15 C55 15, 50 70, 125 55"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M120 48 L135 55 L121 63"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
             </div>
 
-            <!-- Item 3 -->
-            <div>
+            <!-- STEP 2 -->
+            <div class="relative flex flex-col items-center text-center">
               <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                class="absolute -top-7 flex h-8 w-8 items-center justify-center rounded-full border border-dashed border-gray-300 text-sm font-medium text-gray-700 bg-white"
               >
-                <img
-                  src="images/shorma.png"
-                  alt="Shorma"
-                  class="w-40 h-40 object-contain"
-                />
+                2
               </div>
-              <h3 class="mt-4 font-bold text-lg">SHORMA</h3>
-            </div>
-            <!-- Item 3 -->
-            <div>
-              <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+
+              <!-- Restaurant Icon -->
+              <div class="mt-8 text-orange-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  class="h-16 w-16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="5"
+                >
+                  <path d="M15 38h70" />
+                  <path d="M20 38v42h60V38" />
+                  <path d="M12 38c2-14 10-20 18-20s16 6 20 20" />
+                  <path d="M88 38c-2-14-10-20-18-20s-16 6-20 20" />
+                  <path d="M30 52h12v28H30z" />
+                  <path d="M53 52h17v13H53z" />
+                  <path d="M53 65h17v15H53z" />
+                </svg>
+              </div>
+
+              <h3 class="mt-4 text-sm font-semibold text-gray-900">
+                Choose<br />Restaurant
+              </h3>
+
+              <!-- Curved arrow -->
+              <svg
+                class="hidden md:block absolute top-24 left-[65%] w-40 h-20 text-green-300"
+                viewBox="0 0 160 80"
+                fill="none"
               >
-                <img
-                  src="images/shorma.png"
-                  alt="Shorma"
-                  class="w-40 h-40 object-contain"
+                <path
+                  d="M5 55 C50 55, 70 10, 125 25"
+                  stroke="currentColor"
+                  stroke-width="2"
                 />
-              </div>
-              <h3 class="mt-4 font-bold text-lg">SHORMA</h3>
-            </div>
-            <!-- Item 3 -->
-            <div>
-              <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
-              >
-                <img
-                  src="images/shorma.png"
-                  alt="Shorma"
-                  class="w-40 h-40 object-contain"
+                <path
+                  d="M120 18 L135 25 L121 32"
+                  stroke="currentColor"
+                  stroke-width="2"
                 />
-              </div>
-              <h3 class="mt-4 font-bold text-lg">SHORMA</h3>
-            </div>
-            <!-- Item 3 -->
-            <div>
-              <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
-              >
-                <img
-                  src="images/shorma.png"
-                  alt="Shorma"
-                  class="w-40 h-40 object-contain"
-                />
-              </div>
-              <h3 class="mt-4 font-bold text-lg">SHORMA</h3>
+              </svg>
             </div>
 
-            <!-- Item 4 -->
-            <div>
+            <!-- STEP 3 -->
+            <div class="relative flex flex-col items-center text-center">
               <div
-                class="w-40 h-40 mx-auto bg-green-700 rounded-full flex items-center justify-center"
+                class="absolute -top-7 flex h-8 w-8 items-center justify-center rounded-full border border-dashed border-gray-300 text-sm font-medium text-gray-700 bg-white"
               >
-                <img
-                  src="images/taco.png"
-                  alt="Taco"
-                  class="w-[9rem] h-25 object-contain"
-                />
+                3
               </div>
-              <h3 class="mt-4 font-bold text-lg">TACO</h3>
+
+              <!-- Cart Icon -->
+              <div class="mt-8 text-orange-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  class="h-16 w-16"
+                  fill="currentColor"
+                >
+                  <path d="M15 20h12l8 38h43l12-25H38" />
+                  <path d="M38 42h42l-5 13H41z" />
+                  <circle cx="48" cy="73" r="6" />
+                  <circle cx="75" cy="73" r="6" />
+                  <path d="M25 28h12" />
+                </svg>
+              </div>
+
+              <h3 class="mt-4 text-sm font-semibold text-gray-900">
+                Make<br />Order
+              </h3>
+
+              <!-- Curved arrow -->
+              <svg
+                class="hidden md:block absolute top-24 left-[65%] w-40 h-20 text-green-300"
+                viewBox="0 0 160 80"
+                fill="none"
+              >
+                <path
+                  d="M5 20 C55 10, 60 65, 125 55"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M120 48 L135 55 L121 63"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="relative flex flex-col items-center text-center">
+              <div
+                class="absolute -top-7 flex h-8 w-8 items-center justify-center rounded-full border border-dashed border-gray-300 text-sm font-medium text-gray-700 bg-white"
+              >
+                4
+              </div>
+
+              <!-- Delivery Truck Icon -->
+              <div class="mt-8 text-orange-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  class="h-16 w-16"
+                  fill="currentColor"
+                >
+                  <path d="M8 27h52v42H8z" />
+                  <path d="M60 40h17l15 17v12H60z" />
+                  <circle cx="27" cy="73" r="9" fill="white" />
+                  <circle cx="27" cy="73" r="5" />
+                  <circle cx="76" cy="73" r="9" fill="white" />
+                  <circle cx="76" cy="73" r="5" />
+                  <path d="M67 46h10l9 10H67z" fill="white" />
+                </svg>
+              </div>
+
+              <h3 class="mt-4 text-sm font-semibold text-gray-900">
+                Food is on the<br />way.
+              </h3>
             </div>
           </div>
         </div>
       </section>
+      <!-- card section -->
     </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+      function scrollRight() {
+        document.getElementById("slider").scrollBy({
+          left: 300,
+          behavior: "smooth",
+        });
+      }
+
+      function scrollLeft() {
+        document.getElementById("slider").scrollBy({
+          left: -300,
+          behavior: "smooth",
+        });
+      }
+    </script>
   </body>
 </html>
