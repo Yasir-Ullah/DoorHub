@@ -67,6 +67,151 @@
           Contact Us
         </button>
       </nav>
+      <!-- ================= NAVBAR ================= -->
+
+      <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <a href="index.html" class="text-2xl font-bold text-orange-500">
+            DoorHub
+          </a>
+
+          <!-- ================= DESKTOP MENU ================= -->
+
+          <ul
+            class="hidden md:flex items-center gap-8 bg-green-700 text-white px-8 py-2 rounded-xl"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="text-orange-400 hover:text-orange-300 transition duration-300"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="about.html"
+                class="hover:text-orange-400 transition duration-300"
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#features"
+                class="hover:text-orange-400 transition duration-300"
+              >
+                Features
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="hover:text-orange-400 transition duration-300"
+              >
+                Contact
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#blog"
+                class="hover:text-orange-400 transition duration-300"
+              >
+                Blog
+              </a>
+            </li>
+          </ul>
+
+          <!-- ================= DESKTOP CONTACT ================= -->
+
+          <a
+            href="#contact"
+            class="hidden md:block bg-orange-400 hover:bg-orange-500 text-white px-5 py-2 rounded-lg transition duration-300"
+          >
+            Contact Us
+          </a>
+
+          <!-- ================= MOBILE MENU BUTTON ================= -->
+
+          <button
+            id="menuBtn"
+            type="button"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-green-700 text-white text-2xl focus:outline-none"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+
+        <!-- ================= MOBILE MENU ================= -->
+
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden max-w-7xl mx-auto mt-3 bg-green-700 rounded-xl overflow-hidden"
+        >
+          <ul class="flex flex-col text-white px-5 py-3">
+            <li>
+              <a
+                href="index.html"
+                class="block py-3 text-orange-400 border-b border-white/10"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="about.html"
+                class="block py-3 hover:text-orange-400 border-b border-white/10 transition"
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#features"
+                class="block py-3 hover:text-orange-400 border-b border-white/10 transition"
+              >
+                Features
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="block py-3 hover:text-orange-400 border-b border-white/10 transition"
+              >
+                Contact
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#blog"
+                class="block py-3 hover:text-orange-400 transition"
+              >
+                Blog
+              </a>
+            </li>
+
+            <!-- Mobile Contact Button -->
+            <li class="pt-3">
+              <a
+                href="#contact"
+                class="block text-center bg-orange-400 hover:bg-orange-500 text-white px-5 py-2 rounded-lg transition"
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       <!-- ================= HERO ================= -->
 
@@ -1551,6 +1696,32 @@
     <!-- ================= JAVASCRIPT ================= -->
 
     <script>
+      // navbar
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+
+        // Change hamburger icon
+        if (mobileMenu.classList.contains("hidden")) {
+          menuBtn.innerHTML = "☰";
+        } else {
+          menuBtn.innerHTML = "✕";
+        }
+      });
+
+      // Close menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+
+          menuBtn.innerHTML = "☰";
+        });
+      });
+      // navbar
       function scrollRight() {
         document.getElementById("slider").scrollBy({
           left: 300,
